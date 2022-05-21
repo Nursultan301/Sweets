@@ -1,0 +1,15 @@
+{% for item in sweets %}
+<div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="product__item">
+        <div class="product__item__pic set-bg" data-setbg="{{ item.img.url }}">
+            <div class="product__label">
+                <span>{{ item.category }}</span>
+            </div>
+        </div>
+        <div class="product__item__text">
+            <h6><a href="#">{{ item.title }}</a></h6>
+            <div>{{ item.price }} сом</div>
+        </div>
+    </div>
+</div>
+{% endfor %}

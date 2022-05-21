@@ -1,0 +1,227 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Главная страница{% endblock title %}
+{% block content %}
+<div class="breadcrumb-option">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="breadcrumb__text">
+                    <h2>Биз жөнүндө</h2>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="breadcrumb__links">
+                    <a href="./index.html">Башкы бет</a>
+                    <span>Биз жөнүндө</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="about spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="about__video set-bg" data-setbg="{% static 'img/about-video.jpg' %}">
+                    <a href="https://www.youtube.com/watch?v=8PJ3_p7VqHw&list=RD8PJ3_p7VqHw&start_radio=1"
+                       class="play-btn video-popup"><i class="fa fa-play"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="about__text">
+                    <div class="section-title">
+                        <span>Cake дүкөнү жөнүндө</span>
+                        <h2>Cake дүкөнүнүн торттору жана токочтору!</h2>
+                    </div>
+                    <p>"Cake дүкөнү" чакан үй-бүлөлүк бизнес катары башталган кыргызстандык бренд. ээси
+                        Акраманова .Н</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="about__bar">
+                    <div class="about__bar__item">
+                        <p>Торттун түзүлүшү</p>
+                        <div id="bar1" class="barfiller">
+                            <div class="tipWrap"><span class="tip"></span></div>
+                            <span class="fill" data-percentage="95"></span>
+                        </div>
+                    </div>
+                    <div class="about__bar__item">
+                        <p>Торт рецепттери</p>
+                        <div id="bar2" class="barfiller">
+                            <div class="tipWrap"><span class="tip"></span></div>
+                            <span class="fill" data-percentage="90"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="testimonial spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="section-title">
+                    <span>Ой-пикир</span>
+                    <h2>Биздин кардарлардын ой-пикири</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="testimonial__slider owl-carousel">
+                <div class="col-lg-6">
+                    <div class="testimonial__item">
+                        <div class="testimonial__author">
+                            <div class="testimonial__author__pic">
+                                <img src="{% static 'img/testimonial/photo2.jpg' %}" alt="">
+                            </div>
+                            <div class="testimonial__author__text">
+                                <h5>Акраманова.Н</h5>
+                                <span>Бишкек</span>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star-half_alt"></span>
+                        </div>
+                        <p>Кутмандуу күнүң менен! Торт үчүн чоң рахмат, абдан даамдуу, апам кубанды! Абдан, абдан
+                            даамдуу жана кооз, укмуштуудай торт! Биздин үй-бүлөдөн чоң рахмат!!!Аракеттериңиз үчүн
+                            рахмат, Катюша!!! Сиздерге дагы жакшы кардарларды жана чыгармачылык ийгилик
+                            каалайбыз!!!!!</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="testimonial__item">
+                        <div class="testimonial__author">
+                            <div class="testimonial__author__pic">
+                                <img src="{% static 'img/testimonial/photo2.jpg' %}" alt="">
+                            </div>
+                            <div class="testimonial__author__text">
+                                <h5>Ускеева С</h5>
+                                <span>Бишкек</span>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star-half_alt"></span>
+                        </div>
+                        <p>Ар дайымкыдай баардыгы жогоруда!!!Даамдуу,чыланган,жыпар жыттуу,натуралдуу продукция.Баардык
+                            каалоолор эске алынды.Катюша кенеш берип варианттарды сунуштады.Бакыттын коздорундо бала
+                            сулуулук жана зергерчилик жөнүндө тандоонун тууралыгын дагы бир жолу далилдеди .Мен баарына
+                            кеңеш берем</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="testimonial__item">
+                        <div class="testimonial__author">
+                            <div class="testimonial__author__pic">
+                                <img src="{% static 'img/testimonial/photo2.jpg' %}" alt="">
+                            </div>
+                            <div class="testimonial__author__text">
+                                <h5>Акраманова.Н</h5>
+                                <span>Бишкек</span>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star-half_alt"></span>
+                        </div>
+                        <p>Кутмандуу күнүң менен! Торт үчүн чоң рахмат, абдан даамдуу, апам кубанды! Абдан, абдан
+                            даамдуу жана кооз, укмуштуудай торт! Биздин үй-бүлөдөн чоң рахмат!!!Аракеттериңиз үчүн
+                            рахмат, Катюша!!! Сиздерге дагы жакшы кардарларды жана чыгармачылык ийгилик
+                            каалайбыз!!!!!</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="testimonial__item">
+                        <div class="testimonial__author">
+                            <div class="testimonial__author__pic">
+                                <img src="img/testimonial/photo2.jpg" alt="">
+                            </div>
+                            <div class="testimonial__author__text">
+                                <h5>Ускеева С</h5>
+                                <span>Бишкек</span>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star-half_alt"></span>
+                        </div>
+                        <p>Ар дайымкыдай баардыгы жогоруда!!!Даамдуу,чыланган,жыпар жыттуу,натуралдуу продукция.Баардык
+                            каалоолор эске алынды.Катюша кенеш берип варианттарды сунуштады.Бакыттын коздорундо бала
+                            сулуулук жана зергерчилик жөнүндө тандоонун тууралыгын дагы бир жолу далилдеди .Мен баарына
+                            кеңеш берем</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="testimonial__item">
+                        <div class="testimonial__author">
+                            <div class="testimonial__author__pic">
+                                <img src="{% static 'img/testimonial/photo2.jpg' %} " alt="">
+                            </div>
+                            <div class="testimonial__author__text">
+                                <h5>Акраманова.Н</h5>
+                                <span>Бишкек</span>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star-half_alt"></span>
+                        </div>
+                        <p>Кутмандуу күнүң менен! Торт үчүн чоң рахмат, абдан даамдуу, апам кубанды! Абдан, абдан
+                            даамдуу жана кооз, укмуштуудай торт! Биздин үй-бүлөдөн чоң рахмат!!!Аракеттериңиз үчүн
+                            рахмат, Катюша!!! Сиздерге дагы жакшы кардарларды жана чыгармачылык ийгилик
+                            каалайбыз!!!!!</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="testimonial__item">
+                        <div class="testimonial__author">
+                            <div class="testimonial__author__pic">
+                                <img src="{% static 'img/testimonial/photo2.jpg{% static '' %}' %} " alt="">
+                            </div>
+                            <div class="testimonial__author__text">
+                                <h5>Ускеева С</h5>
+                                <span>Бишкек</span>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star-half_alt"></span>
+                        </div>
+                        <p>Ар дайымкыдай баардыгы жогоруда!!!Даамдуу,чыланган,жыпар жыттуу,натуралдуу продукция.Баардык
+                            каалоолор эске алынды.Катюша кенеш берип варианттарды сунуштады.Бакыттын коздорундо бала
+                            сулуулук жана зергерчилик жөнүндө тандоонун тууралыгын дагы бир жолу далилдеди .Мен баарына
+                            кеңеш берем</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
