@@ -6,6 +6,6 @@ register = template.Library()
 
 
 @register.inclusion_tag('cake/tags/sweets.html')
-def get_sweets(cnt=8):
+def get_sweets(cnt=500):
     sweets = Sweets.objects.order_by("-create_at")[:cnt]
     return {"sweets": sweets}

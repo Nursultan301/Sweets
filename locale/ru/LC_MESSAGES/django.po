@@ -1,0 +1,209 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-21 18:50+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: templates/base.html:57 templates/cake/about.html:15
+#: templates/cake/index.html:3 templates/cake/shop.html:15
+msgid "Башкы бет"
+msgstr ""
+
+#: templates/base.html:58 templates/cake/about.html:3
+#: templates/cake/about.html:10 templates/cake/about.html:16
+msgid "Биз жөнүндө"
+msgstr ""
+
+#: templates/base.html:60
+msgid "Контакты"
+msgstr ""
+
+#: templates/base.html:73
+msgid "Change"
+msgstr ""
+
+#: templates/base.html:89 templates/cake/contact.html:30
+msgid "ЖУМУШ УБАКТЫСЫ"
+msgstr ""
+
+#: templates/base.html:91 templates/cake/contact.html:32
+msgid "Күн сайын 09:00 – 18:00"
+msgstr ""
+
+#: templates/base.html:92 templates/cake/contact.html:33
+msgid "Ишемби 09:00 – 15:00"
+msgstr ""
+
+#: templates/base.html:93 templates/cake/contact.html:34
+msgid "Жекшемби дем алыш"
+msgstr ""
+
+#: templates/base.html:102
+msgid ""
+"Таттууларды иштеп чыгууда биз биринчи кезекте өзүбүздүн керектөөчүлөрдү "
+"ойлойбуз. Биздин продукцияларыбыз ар бир үйгө кубаныч, дагы да көп бакыт "
+"алып келишин каалайбыз!"
+msgstr ""
+
+#: templates/base.html:113
+msgid "Жазылыңыз"
+msgstr ""
+
+#: templates/base.html:114
+msgid "Жаңылыктар жана жарнамалар үчүн сунуштарды алыңыз"
+msgstr ""
+
+#: templates/base.html:128
+msgid "2022, «Cake» Бишкекский технический колледж."
+msgstr ""
+
+#: templates/cake/about.html:37 templates/cake/index.html:27
+msgid "Cake дүкөнү жөнүндө"
+msgstr ""
+
+#: templates/cake/about.html:38 templates/cake/index.html:28
+msgid "Cake дүкөнүнүн торттору жана токочтору!"
+msgstr ""
+
+#: templates/cake/about.html:40 templates/cake/index.html:30
+msgid ""
+"Cake дүкөнү чакан үй-бүлөлүк бизнес катары башталган кыргызстандык бренд. "
+"ээси Акраманова .Н"
+msgstr ""
+
+#: templates/cake/about.html:46 templates/cake/index.html:36
+msgid "Торттун түзүлүшү"
+msgstr ""
+
+#: templates/cake/about.html:53 templates/cake/index.html:43
+msgid "Торт рецепттери"
+msgstr ""
+
+#: templates/cake/about.html:70 templates/cake/index.html:140
+msgid "Ой-пикир"
+msgstr ""
+
+#: templates/cake/about.html:71 templates/cake/index.html:141
+msgid "Биздин кардарлардын ой-пикири"
+msgstr ""
+
+#: templates/cake/contact.html:3
+msgid "Байланыш"
+msgstr ""
+
+#: templates/cake/contact.html:29
+msgid " Биз менен байланышуу"
+msgstr ""
+
+#: templates/cake/contact.html:52
+msgid " жөнөтүү"
+msgstr ""
+
+#: templates/cake/index.html:12
+msgid "Биздин таттуулар менен жашооңузду ширин жана таттуу кылыңыз!"
+msgstr ""
+
+#: templates/cake/index.html:62
+msgid "Кекс"
+msgstr ""
+
+#: templates/cake/index.html:68
+msgid "Буттер"
+msgstr ""
+
+#: templates/cake/index.html:74
+msgid "Торт"
+msgstr ""
+
+#: templates/cake/index.html:80
+msgid "Бал муздак"
+msgstr ""
+
+#: templates/cake/index.html:86
+msgid "Пончик"
+msgstr ""
+
+#: templates/cake/index.html:92
+msgid "Печенье"
+msgstr ""
+
+#: templates/cake/index.html:114
+msgid "Cake таттуулары"
+msgstr ""
+
+#: templates/cake/index.html:115 templates/cake/index.html:123
+msgid "Заказ кылуу"
+msgstr ""
+
+#: templates/cake/index.html:302
+msgid "Биздин инстаграмга жазылыңыз"
+msgstr ""
+
+#: templates/cake/index.html:303
+msgid "Таттуу көз ирмемдер инстаграмда сакталат"
+msgstr ""
+
+#: templates/cake/shop.html:62
+msgid "натыйжанын 1-8 көрсөтүлүүдө"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:7
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:221
+msgid "The install worked successfully! Congratulations!"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:207
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:222
+#, python-format
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" "
+"rel=\"noopener\">DEBUG=True</a> is in your settings file and you have not "
+"configured any URLs."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:230
+msgid "Django Documentation"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:231
+msgid "Topics, references, &amp; how-to’s"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:239
+msgid "Tutorial: A Polling App"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:240
+msgid "Get started with Django"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:248
+msgid "Django Community"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:249
+msgid "Connect, get help, or contribute"
+msgstr ""

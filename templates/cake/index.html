@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-{% load static sweets %}
-{% block title %}Главная страница{% endblock title %}
+{% load static sweets i18n %}
+{% block title %}{% trans "Башкы бет" %}{% endblock title %}
 {% block content %}
 <section class="hero">
     <div class="hero__slider owl-carousel">
@@ -9,18 +9,7 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-8">
                         <div class="hero__text">
-                            <h2>Биздин таттуулар менен жашооңузду ширин жана таттуу кылыңыз!</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="hero__item set-bg" data-setbg="{% static 'img/hero/hero-1.jpg' %}">
-            <div class="container">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="hero__text">
-                            <h2>Биздин таттуулар менен жашооңузду ширин жана таттуу кылыңыз!</h2>
+                            <h2>{% trans "Биздин таттуулар менен жашооңузду ширин жана таттуу кылыңыз!" %}</h2>
                         </div>
                     </div>
                 </div>
@@ -35,24 +24,23 @@
             <div class="col-lg-6 col-md-6">
                 <div class="about__text">
                     <div class="section-title">
-                        <span>Cake дүкөнү жөнүндө</span>
-                        <h2>Cake дүкөнүнүн торттору жана токочтору!</h2>
+                        <span>{% trans "Cake дүкөнү жөнүндө" %} </span>
+                        <h2>{% trans "Cake дүкөнүнүн торттору жана токочтору!" %} </h2>
                     </div>
-                    <p>"Cake дүкөнү" чакан үй-бүлөлүк бизнес катары башталган кыргызстандык бренд. ээси
-                        Акраманова .Н</p>
+                    <p>{% trans "Cake дүкөнү чакан үй-бүлөлүк бизнес катары башталган кыргызстандык бренд. ээси Акраманова .Н" %} </p>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">
                 <div class="about__bar">
                     <div class="about__bar__item">
-                        <p>Торттун түзүлүшү</p>
+                        <p>{% trans "Торттун түзүлүшү" %}</p>
                         <div id="bar1" class="barfiller">
                             <div class="tipWrap"><span class="tip"></span></div>
                             <span class="fill" data-percentage="95"></span>
                         </div>
                     </div>
                     <div class="about__bar__item">
-                        <p>Торт рецепттери</p>
+                        <p>{% trans "Торт рецепттери" %}</p>
                         <div id="bar2" class="barfiller">
                             <div class="tipWrap"><span class="tip"></span></div>
                             <span class="fill" data-percentage="90"></span>
@@ -71,37 +59,37 @@
                 <div class="categories__item">
                     <div class="categories__item__icon">
                         <span class="flaticon-029-cupcake-3"></span>
-                        <h5>Кекс</h5>
+                        <h5>{% trans "Кекс" %}</h5>
                     </div>
                 </div>
                 <div class="categories__item">
                     <div class="categories__item__icon">
                         <span class="flaticon-034-chocolate-roll"></span>
-                        <h5>Буттер</h5>
+                        <h5>{% trans "Буттер" %}</h5>
                     </div>
                 </div>
                 <div class="categories__item">
                     <div class="categories__item__icon">
                         <span class="flaticon-005-pancake"></span>
-                        <h5>Торт</h5>
+                        <h5>{% trans "Торт" %}</h5>
                     </div>
                 </div>
                 <div class="categories__item">
                     <div class="categories__item__icon">
                         <span class="flaticon-030-cupcake-2"></span>
-                        <h5>Бал муздак</h5>
+                        <h5>{% trans "Бал муздак" %}</h5>
                     </div>
                 </div>
                 <div class="categories__item">
                     <div class="categories__item__icon">
                         <span class="flaticon-006-macarons"></span>
-                        <h5>Пончик</h5>
+                        <h5>{% trans "Пончик" %}</h5>
                     </div>
                 </div>
                 <div class="categories__item">
                     <div class="categories__item__icon">
                         <span class="flaticon-006-macarons"></span>
-                        <h5>Печенье</h5>
+                        <h5>{% trans "Печенье" %}</h5>
                     </div>
                 </div>
             </div>
@@ -123,8 +111,8 @@
             <div class="col-lg-6">
                 <div class="class__form">
                     <div class="section-title">
-                        <span>Cake таттуулары</span>
-                        <h2>Заказ кылуу</h2>
+                        <span>{% trans "Cake таттуулары" %} </span>
+                        <h2>{% trans "Заказ кылуу" %} </h2>
                     </div>
                     <form action="{% url 'create' %}" method="post">
                         {% csrf_token %}
@@ -132,7 +120,7 @@
                         {{ form.phone }}
                         {{ form.address }}
                         {{ form.messages }}
-                        <button type="submit" class="site-btn mt-3">Заказ кылуу</button>
+                        <button type="submit" class="site-btn mt-3">{% trans "Заказ кылуу" %} </button>
                     </form>
                 </div>
             </div>
@@ -149,8 +137,8 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <div class="section-title">
-                    <span>Ой-пикир</span>
-                    <h2>Биздин кардарлардын ой-пикири</h2>
+                    <span>{% trans "Ой-пикир" %} </span>
+                    <h2>{% trans "Биздин кардарлардын ой-пикири" %} </h2>
                 </div>
             </div>
         </div>
@@ -311,8 +299,8 @@
             <div class="col-lg-4 p-0">
                 <div class="instagram__text">
                     <div class="section-title">
-                        <span>Биздин инстаграмга жазылыңыз</span>
-                        <h2>Таттуу көз ирмемдер инстаграмда сакталат</h2>
+                        <span>{% trans "Биздин инстаграмга жазылыңыз" %} </span>
+                        <h2>{% trans "Таттуу көз ирмемдер инстаграмда сакталат" %} </h2>
                     </div>
                     <h5><i class="fa fa-instagram"></i> @cake-kg</h5>
                 </div>

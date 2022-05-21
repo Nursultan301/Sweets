@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, TemplateView
 
-from cake.forms import OrderForm, SubscriptionForm
-from cake.models import Sweets, Order, Subscription
+from cake.forms import OrderForm, SubscriptionForm, FeedbackForm
+from cake.models import Sweets, Order, Subscription, Feedback
 
 
 class SweetsListView(ListView):
@@ -30,17 +30,24 @@ class SubscriptionCreateView(CreateView):
     success_url = "/"
 
 
-def home(request):
-    return render(request, 'cake/index.html')
-
-
 def about(request):
     return render(request, 'cake/about.html')
 
 
-def shop(request):
-    return render(request, 'cake/shop.html')
+class FeedbackCreateView(CreateView):
+    model = Feedback
+    template_name = "cake/contact.html"
+    form_class = FeedbackForm
+    success_url = "/"
 
 
-def contact(request):
-    return render(request, 'cake/contact.html')
+class ShopListView(ListView):
+    model = Sweets
+    template_name = "cake/shop.html"
+    paginate_by = 8
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['sweet_count'] = Sweets.objects.count()
+        return context
+

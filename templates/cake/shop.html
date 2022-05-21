@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-{% load static sweets %}
-{% block title %}Главная страница{% endblock title %}
+{% load static i18n %}
+{% block title %}Shop{% endblock title %}
 {% block content %}
 <div class="breadcrumb-option">
     <div class="container">
@@ -12,7 +12,7 @@
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="breadcrumb__links">
-                    <a href="./index.html">Башкы бет</a>
+                    <a href="/">{% trans "Башкы бет" %} </a>
                     <span>Shop</span>
                 </div>
             </div>
@@ -22,54 +22,47 @@
 
 <section class="shop spad">
     <div class="container">
-        <div class="shop__option">
-            <div class="row">
-                <div class="col-lg-7 col-md-7">
-                    <div class="shop__option__search">
-                        <form action="#">
-                            <select>
-                                <option value="">Категория</option>
-                                <option value="">Торттор</option>
-                                <option value="">Кекс</option>
-                                <option value="">Бисквит</option>
-                            </select>
-                            <input type="text" placeholder="Издөө">
-                            <button type="submit"><i class="fa fa-search"></i></button>
-                        </form>
+        <div class="row">
+            {% for item in object_list %}
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="product__item">
+                    <div class="product__item__pic set-bg" data-setbg="{{ item.img.url }}">
+                        <div class="product__label">
+                            <span>{{ item.category }}</span>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-5 col-md-5">
-                    <div class="shop__option__right">
-                        <select>
-                            <option value="">Демейки</option>
-                            <option value="">Адан Zге чейин</option>
-                            <option value="">1 - 8</option>
-                            <option value="">Аты</option>
-                        </select>
-                        <a href="#"><i class="fa fa-list"></i></a>
-                        <a href="#"><i class="fa fa-reorder"></i></a>
+                    <div class="product__item__text">
+                        <h6><a href="#">{{ item.title }}</a></h6>
+                        <div>{{ item.price }} сом</div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            {% get_sweets %}
+            {% endfor %}
         </div>
         <div class="shop__last__option">
             <div class="row">
+                {% if page_obj.has_other_pages %}
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="shop__pagination">
-                        <a href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#"><span class="arrow_carrot-right"></span></a>
+                        {% if page_obj.has_previous %}
+                        <a href="?page={{ page_obj.previous_page_number }}"><span class="arrow_carrot-left"></span></a>
+                        {% endif %}
+
+                        {% for page in page_obj.paginator.page_range %}
+                        <a href="?page={{ page }}">{{ page }}</a>
+                        {% endfor %}
+
+                        {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}"><span class="arrow_carrot-right"></span></a>
+                        {% endif %}
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="shop__last__text">
-                        <p>10 натыйжанын 1-9у көрсөтүлүүдө</p>
+                        <p>{{ sweet_count }} {% trans "натыйжанын 1-8 көрсөтүлүүдө" %} </p>
                     </div>
                 </div>
+                {% endif %}
             </div>
         </div>
     </div>

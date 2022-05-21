@@ -1,6 +1,6 @@
 from django import forms
 
-from cake.models import Order, Subscription
+from cake.models import Order, Subscription, Feedback
 
 
 class OrderForm(forms.ModelForm):
@@ -22,5 +22,17 @@ class SubscriptionForm(forms.ModelForm):
         model = Subscription
         fields = ('email',)
         widgets = {
-             "email": forms.EmailInput(attrs={"placeholder": "E-mail"})
-         }
+            "email": forms.EmailInput(attrs={"placeholder": "E-mail"})
+        }
+
+
+class FeedbackForm(forms.ModelForm):
+    class Meta:
+        model = Feedback
+        fields = "__all__"
+
+        widgets = {
+            "name": forms.TextInput(attrs={'placeholder': 'Атыңыз'}),
+            "email": forms.TextInput(attrs={'placeholder': 'E-mail'}),
+            "messages": forms.Textarea(attrs={'placeholder': 'Кат'}),
+        }

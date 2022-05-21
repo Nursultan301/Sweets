@@ -11,7 +11,7 @@
     <meta name="keywords" content="Cake, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cake</title>
+    <title>{% block title %} {% endblock title %}</title>
 
     <link rel="apple-touch-icon" sizes="57x57" href="{% static 'img/favicon/apple-icon-57x57.png' %}">
     <link rel="apple-touch-icon" sizes="60x60" href="{% static 'img/favicon/apple-icon-60x60.png' %}">
@@ -48,78 +48,30 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 </head>
 <body>
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
-
-    <div class="offcanvas-menu-overlay"></div>
-    <div class="offcanvas-menu-wrapper">
-        <div class="offcanvas__cart">
-            <div class="offcanvas__cart__links">
-                <a href="#" class="search-switch"><img src="{% static 'img/icon/search.png' %}" alt=""></a>
-                <a href="#"><img src="img/icon/heart.png" alt=""></a>
-            </div>
-            <div class="offcanvas__cart__item">
-                <a href="#"><img src="{% static 'img/icon/cart.png' %}" alt=""> <span>0</span></a>
-                <div class="cart__price">Корзина: <span>0</span></div>
-            </div>
-        </div>
-        <div class="offcanvas__logo">
-            <a href="./index.html"><img src="{% static 'img/logo.png' %}" alt=""></a>
-        </div>
-        <div id="mobile-menu-wrap"></div>
-    </div>
-
     <header class="header">
-        <div class="header__top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="header__top__inner">
-                            <div class="header__top__left">
-                                <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
-                                    <input name="next" type="hidden" value="{{ redirect_to }}" />
-                                    <select style="color: #fff;" name="language">
-                                        {% get_current_language as LANGUAGE_CODE %}
-                                        {% get_available_languages as LANGUAGES %}
-                                        {% get_language_info_list for LANGUAGES as languages %}
-                                        {% for language in languages %}
-                                            <option style="color: #000;" value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
-                                                {{ language.name_local }} ({{ language.code }})
-                                            </option>
-                                        {% endfor %}
-                                    </select>
-                                    <input class="" type="submit" value="{% trans 'Change' %}" />
-                                </form>
-                            </div>
-                            <div class="header__logo">
-                                <a href="./index.html"><img src="img/logo.png" alt=""></a>
-                            </div>
-                            <div class="header__top__right">
-                                <div class="header__top__right__links">
-                                    <a href="#" class="search-switch"><img src="{% static 'img/icon/search.png' %}" alt=""></a>
-                                    <a href="#"><img src="img/icon/heart.png" alt=""></a>
-                                </div>
-                                <div class="header__top__right__cart">
-                                    <a href="#"><img src="{% static 'img/icon/cart.png' %}" alt=""> <span>0</span></a>
-                                    <div class="cart__price">Корзина: <span>0</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="canvas__open"><i class="fa fa-bars"></i></div>
-            </div>
-        </div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <li class="{% if request.path == home %} active {% endif %}"><a href="/">Башкы бет</a></li>
-                            <li class="{% if request.path == about %} active {% endif %}"><a href="{% url 'about' %}">Биз жөнүндө</a></li>
+                            <li class="{% if request.path == home %} active {% endif %}"><a href="/">{% trans "Башкы бет" %} </a></li>
+                            <li class="{% if request.path == about %} active {% endif %}"><a href="{% url 'about' %}">{% trans "Биз жөнүндө" %} </a></li>
                             <li class="{% if request.path == shop %} active {% endif %}"><a href="{% url 'shop' %}">Shop</a></li>
-                            <li class="{% if request.path == contact %} active {% endif %}"><a href="{% url 'contact' %}">Контакты</a></li>
+                            <li class="{% if request.path == contact %} active {% endif %}"><a href="{% url 'contact' %}">{% trans "Контакты" %} </a></li>
+                            <li><form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                                    <input name="next" type="hidden" value="{{ redirect_to }}" />
+                                    <select class="text-center rounded-pill" style="color: #fff;" name="language">
+                                        {% get_current_language as LANGUAGE_CODE %}
+                                        {% get_available_languages as LANGUAGES %}
+                                        {% get_language_info_list for LANGUAGES as languages %}
+                                        {% for language in languages %}
+                                            <option  style="color: #000;" value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+                                                {{ language.name_local }} ({{ language.code }})
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                    <input class="" type="submit" value="{% trans 'Change' %}" />
+                                </form></li>
                         </ul>
                     </nav>
                 </div>
@@ -134,11 +86,11 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="footer__widget">
-                        <h6>ЖУМУШ УБАКТЫСЫ</h6>
+                        <h6>{% trans "ЖУМУШ УБАКТЫСЫ" %} </h6>
                         <ul>
-                            <li>Ежедневно 09:00 — 18:00</li>
-                            <li>Суббота 09:00 — 15:00</li>
-                            <li>Воскресенье — выходной</li>
+                            <li>{% trans "Күн сайын 09:00 – 18:00" %} </li>
+                            <li>{% trans "Ишемби 09:00 – 15:00" %} </li>
+                            <li>{% trans "Жекшемби дем алыш" %} </li>
                         </ul>
                     </div>
                 </div>
@@ -147,7 +99,7 @@
                         <div class="footer__logo">
                             <a href="#"><img src="{% static 'img/footer-logo.png' %}" alt=""></a>
                         </div>
-                        <p>Таттууларды иштеп чыгууда биз биринчи кезекте өзүбүздүн керектөөчүлөрдү ойлойбуз. Биздин продукцияларыбыз ар бир үйгө кубаныч, дагы да көп бакыт алып келишин каалайбыз!</p>
+                        <p>{% trans "Таттууларды иштеп чыгууда биз биринчи кезекте өзүбүздүн керектөөчүлөрдү ойлойбуз. Биздин продукцияларыбыз ар бир үйгө кубаныч, дагы да көп бакыт алып келишин каалайбыз!" %} </p>
                         <div class="footer__social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>
@@ -158,8 +110,8 @@
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="footer__newslatter">
-                        <h6>Жазылыңыз</h6>
-                        <p>Жаңылыктар жана жарнамалар үчүн сунуштарды алыңыз</p>
+                        <h6>{% trans "Жазылыңыз" %}</h6>
+                        <p>{% trans "Жаңылыктар жана жарнамалар үчүн сунуштарды алыңыз" %}</p>
                         <form action="{% url 'subscription' %}" method="post">
                             {% csrf_token %}
                             {{ subscription.email }}
@@ -173,7 +125,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <p class="copyright__text text-white">© 2022, «Cake» Всё для пищевой промышленности. Все права защищены.</p>
+                        <p class="copyright__text text-white">{% trans "2022, «Cake» Бишкекский технический колледж." %}</p>
                   </div>
             </div>
         </div>

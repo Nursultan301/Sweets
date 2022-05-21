@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-{% load static %}
-{% block title %}Главная страница{% endblock title %}
+{% load static i18n %}
+{% block title %}{% trans "Байланыш" %}{% endblock title %}
 {% block content %}
     <section class="contact spad">
         <div class="container">
@@ -11,7 +11,7 @@
                             <div class="map__inner">
                                 <h6>Cake</h6>
                                 <ul>
-                                    <li>Эл.почта@cake.com</li>
+                                    <li>@cake.com</li>
                                     <li><a href="tel:996500002222" style="color: #000;">+996 500-002-222</a></li>
                                     <li><a href="tel:996500001002" style="color: #000;">+996 500-001-002</a></li>
                                 </ul>
@@ -26,29 +26,30 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="contact__text">
-                        <h3>Биз менен байланышуу</h3>
-                        <h6>ЖУМУШ СААТЫ</h6>
+                        <h3>{% trans " Биз менен байланышуу" %}</h3>
+                        <h6>{% trans "ЖУМУШ УБАКТЫСЫ" %} </h6>
                         <ul>
-                            <li>Ежедневно 09:00 — 18:00</li>
-                            <li>Суббота 09:00 — 15:00</li>
-                            <li>Воскресенье — выходной</li>
+                            <li>{% trans "Күн сайын 09:00 – 18:00" %} </li>
+                            <li>{% trans "Ишемби 09:00 – 15:00" %} </li>
+                            <li>{% trans "Жекшемби дем алыш" %} </li>
                         </ul>
                         <img src="img/cake-piece.png" alt="">
                     </div>
                 </div>
                 <div class="col-lg-8">
                     <div class="contact__form">
-                        <form action="#">
+                        <form method="post">
+                            {% csrf_token %}
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <input type="text" placeholder="Атыңыз">
+                                    {{ form.name }}
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="text" placeholder="Эл.почтаңыз">
+                                    {{ form.email }}
                                 </div>
                                 <div class="col-lg-12">
-                                    <textarea placeholder="Кат"></textarea>
-                                    <button type="submit" class="site-btn">жөнөтүү</button>
+                                    {{ form.messages }}
+                                    <button type="submit" class="site-btn">{% trans " жөнөтүү" %}</button>
                                 </div>
                             </div>
                         </form>
