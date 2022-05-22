@@ -82,6 +82,7 @@
         }
     });
 
+    $('input[name=phone]').mask("+996 (111) 11-11-11");
 
     $(".testimonial__slider").owlCarousel({
         loop: true,

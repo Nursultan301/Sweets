@@ -58,22 +58,25 @@
                             <li class="{% if request.path == about %} active {% endif %}"><a href="{% url 'about' %}">{% trans "Биз жөнүндө" %} </a></li>
                             <li class="{% if request.path == shop %} active {% endif %}"><a href="{% url 'shop' %}">Shop</a></li>
                             <li class="{% if request.path == contact %} active {% endif %}"><a href="{% url 'contact' %}">{% trans "Контакты" %} </a></li>
-                            <li><form action="{% url 'set_language' %}" method="post">{% csrf_token %}
-                                    <input name="next" type="hidden" value="{{ redirect_to }}" />
-                                    <select class="text-center rounded-pill" style="color: #fff;" name="language">
-                                        {% get_current_language as LANGUAGE_CODE %}
-                                        {% get_available_languages as LANGUAGES %}
-                                        {% get_language_info_list for LANGUAGES as languages %}
-                                        {% for language in languages %}
-                                            <option  style="color: #000;" value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
-                                                {{ language.name_local }} ({{ language.code }})
-                                            </option>
-                                        {% endfor %}
-                                    </select>
-                                    <input class="" type="submit" value="{% trans 'Change' %}" />
-                                </form></li>
+                            <li> <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                            <input name="next" type="hidden" value="{{ redirect_to }}" />
+                            <select class="text-center rounded-pill" style="color: #fff;" name="language">
+                                {% get_current_language as LANGUAGE_CODE %}
+                                {% get_available_languages as LANGUAGES %}
+                                {% get_language_info_list for LANGUAGES as languages %}
+                                {% for language in languages %}
+                                    <option  style="color: #000;" value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+                                        {{ language.name_local }} ({{ language.code }})
+                                    </option>
+                                {% endfor %}
+                            </select>
+                            <input class="ml-2 rounded-pill border border-light" type="submit" value="{% trans 'Change' %}" />
+                        </form></li>
                         </ul>
                     </nav>
+                    <div class="col-lg-4">
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -145,6 +148,7 @@
 <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
 <script src="{% static 'js/jquery.barfiller.js' %}"></script>
 <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/jquery.maskedinput.min.js' %}"></script>
 <script src="{% static 'js/jquery.slicknav.js' %}"></script>
 <script src="{% static 'js/owl.carousel.min.js' %}"></script>
 <script src="{% static 'js/jquery.nicescroll.min.js' %}"></script>
